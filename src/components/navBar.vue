@@ -18,7 +18,7 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-neutral-200 text-black' : 'text-black hover:bg-neutral-200', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+              <router-link v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? ' bg-neutral-200 text-black' : 'text-black hover:bg-neutral-200', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
             </div>
           </div>
 
@@ -61,6 +61,9 @@
       </div>
     </DisclosurePanel>
   </Disclosure>
+
+
+
 </template>
 
 <script setup>
@@ -68,9 +71,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Accueil', href: '#', current: true },
-  { name: 'Evenement', href: '#', current: false },
-  { name: 'Restauration', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
+  { name: 'Accueil', href: '/', current: true },
+  { name: 'Bwolf', href: '#', current: false },
+  { name: 'StarDrive', href: '#', current: false },
+  { name: 'Contact', href: 'contact', current: false },
+  { name: 'Creer un evenement', href: '/CreateEvents', current: false },
 ]
 </script>
